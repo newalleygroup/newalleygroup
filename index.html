@@ -269,6 +269,11 @@
             color: #555;
         }
 
+        /* Mobile-only content - hidden by default */
+        .mobile-only-content {
+            display: none;
+        }
+
         /* Footer */
         .footer {
             background-color: #2c5530;
@@ -307,6 +312,10 @@
 
             .highlight {
                 display: none;
+            }
+
+            .mobile-only-content {
+                display: block;
             }
         }
     </style>
@@ -350,6 +359,12 @@
                     <p>We're bringing back the New Alley Group! Our mission is simple: keep our neighborhood clean, prevent illegal dumping, and create a beautiful place we can all be proud to call home.</p>
                 </div>
 
+                <!-- Mobile-only content -->
+                <div class="mobile-only-content">
+                    <h3>Have Pride in Where We Live</h3>
+                    <p>We're bringing back the New Alley Group! Our mission is simple: keep our neighborhood clean, prevent illegal dumping, and create a beautiful place we can all be proud to call home.</p>
+                </div>
+
                 <h3>How it works</h3>
                 <p>It's really quite simple - just a few neighbors getting together to make a difference. We organize community clean-up activities and work together to keep our streets looking their best.</p>
 
@@ -361,6 +376,14 @@
                 <p>Don't worry - I'll keep everyone organized and on track!</p>
 
                 <div class="highlight">
+                    <p><strong>Ready to get involved?</strong></p>
+                    <p>Drop us a line: <a href="mailto:newalleygroup@gmail.com"
+                            class="email-link">newalleygroup@gmail.com</a></p>
+                    <p style="margin-top: 10px; font-style: italic;">Together, we can make our neighborhood shine!</p>
+                </div>
+
+                <!-- Mobile-only content -->
+                <div class="mobile-only-content">
                     <p><strong>Ready to get involved?</strong></p>
                     <p>Drop us a line: <a href="mailto:newalleygroup@gmail.com"
                             class="email-link">newalleygroup@gmail.com</a></p>
