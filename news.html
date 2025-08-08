@@ -265,44 +265,9 @@
             <main class="content-section">
                 <h2>News Management</h2>
                 
-                <!-- News Writing Section -->
+                <!-- News Management Box -->
                 <div class="highlight" style="margin-bottom: 30px;">
-                    <h3>Write New Article</h3>
-                    <form id="newsForm" style="margin-top: 20px;">
-                        <div style="margin-bottom: 15px;">
-                            <label for="newsTitle" style="display: block; margin-bottom: 5px; font-weight: bold; color: #2c5530;">Article Title:</label>
-                            <input type="text" id="newsTitle" name="newsTitle" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;" placeholder="Enter article title...">
-                        </div>
-                        
-                        <div style="margin-bottom: 15px;">
-                            <label for="newsDate" style="display: block; margin-bottom: 5px; font-weight: bold; color: #2c5530;">Date:</label>
-                            <input type="date" id="newsDate" name="newsDate" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 15px;">
-                            <label for="newsContent" style="display: block; margin-bottom: 5px; font-weight: bold; color: #2c5530;">Article Content:</label>
-                            <textarea id="newsContent" name="newsContent" rows="8" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; font-family: inherit;" placeholder="Write your news article here..."></textarea>
-                        </div>
-                        
-                        <div style="margin-bottom: 15px;">
-                            <label for="newsCategory" style="display: block; margin-bottom: 5px; font-weight: bold; color: #2c5530;">Category:</label>
-                            <select id="newsCategory" name="newsCategory" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-                                <option value="general">General News</option>
-                                <option value="events">Events</option>
-                                <option value="cleaning">Cleaning Activities</option>
-                                <option value="community">Community Updates</option>
-                                <option value="announcements">Announcements</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" style="background: linear-gradient(135deg, #2c5530, #4a7c59); color: white; padding: 12px 25px; border: none; border-radius: 25px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Publish Article</button>
-                        <button type="button" onclick="clearForm()" style="background: #6c757d; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; margin-left: 10px;">Clear Form</button>
-                    </form>
-                </div>
-
-                <!-- Write New Article Section -->
-                <div class="highlight" style="margin-top: 30px;">
-                    <h3>Write New Article</h3>
+                    <h3>News Management</h3>
                     <p>This section is currently blank and ready for your content.</p>
                 </div>
             </main>
@@ -349,128 +314,9 @@
     </footer>
 
     <script>
-        // Set current date
-        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-GB');
-
-        // News articles storage
-        let newsArticles = [];
-
-        // Form submission handler
-        document.getElementById('newsForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('newsTitle').value;
-            const date = document.getElementById('newsDate').value;
-            const content = document.getElementById('newsContent').value;
-            const category = document.getElementById('newsCategory').value;
-            
-            if (!title || !date || !content) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // Create new article
-            const newArticle = {
-                id: Date.now(),
-                title: title,
-                date: date,
-                content: content,
-                category: category
-            };
-            
-            // Add to articles array
-            newsArticles.unshift(newArticle);
-            
-            // Save to localStorage
-            localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
-            
-            // Display articles
-            displayNews();
-            
-            // Clear form
-            clearForm();
-            
-            alert('Article published successfully!');
-        });
-
-        // Display news articles
-        function displayNews() {
-            const newsDisplay = document.getElementById('newsDisplay');
-            newsDisplay.innerHTML = '';
-            
-            // Load from localStorage
-            const savedArticles = localStorage.getItem('newsArticles');
-            if (savedArticles) {
-                newsArticles = JSON.parse(savedArticles);
-            }
-            
-            if (newsArticles.length === 0) {
-                newsDisplay.innerHTML = `
-                    <div class="news-article" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-                        <h4 style="color: #2c5530; margin-bottom: 10px;">Welcome to Our News Section</h4>
-                        <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 10px;">Published: ${new Date().toLocaleDateString('en-GB')}</p>
-                        <p>Stay updated with the latest news, events, and achievements of the New Alley Group. Here you'll find information about our recent activities, upcoming events, and community highlights.</p>
-                        <div style="margin-top: 15px;">
-                            <span style="background: #e8f5e8; color: #2c5530; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">General News</span>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-            
-            newsArticles.forEach(article => {
-                const articleDiv = document.createElement('div');
-                articleDiv.className = 'news-article';
-                articleDiv.style.cssText = 'background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 20px; margin-bottom: 20px;';
-                
-                const formattedDate = new Date(article.date).toLocaleDateString('en-GB');
-                
-                articleDiv.innerHTML = `
-                    <h4 style="color: #2c5530; margin-bottom: 10px;">${article.title}</h4>
-                    <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 10px;">Published: ${formattedDate}</p>
-                    <p>${article.content}</p>
-                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="background: #e8f5e8; color: #2c5530; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">${getCategoryName(article.category)}</span>
-                        <button onclick="deleteArticle(${article.id})" style="background: #dc3545; color: white; padding: 5px 10px; border: none; border-radius: 5px; font-size: 0.8rem; cursor: pointer;">Delete</button>
-                    </div>
-                `;
-                
-                newsDisplay.appendChild(articleDiv);
-            });
-        }
-
-        // Get category display name
-        function getCategoryName(category) {
-            const categories = {
-                'general': 'General News',
-                'events': 'Events',
-                'cleaning': 'Cleaning Activities',
-                'community': 'Community Updates',
-                'announcements': 'Announcements'
-            };
-            return categories[category] || category;
-        }
-
-        // Clear form
-        function clearForm() {
-            document.getElementById('newsTitle').value = '';
-            document.getElementById('newsDate').value = '';
-            document.getElementById('newsContent').value = '';
-            document.getElementById('newsCategory').value = 'general';
-        }
-
-        // Delete article
-        function deleteArticle(id) {
-            if (confirm('Are you sure you want to delete this article?')) {
-                newsArticles = newsArticles.filter(article => article.id !== id);
-                localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
-                displayNews();
-            }
-        }
-
-        // Initialize page
+        // Page initialization
         document.addEventListener('DOMContentLoaded', function() {
-            displayNews();
+            // Page is ready
         });
     </script>
 </body>
