@@ -296,44 +296,30 @@
                 padding: 0 15px;
             }
 
-            /* Enhanced Header for Mobile */
-            .header {
-                padding: 20px 0 25px 0;
-                background: linear-gradient(180deg, #8ecc69 0%, #7bb85e 50%, #6fa84e 100%);
-            }
-
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-
-            .logo {
-                height: 120px;
+               /* Enhanced Mobile-only Content */
+            .mobile-only-content {
+                display: block;
+                background: linear-gradient(135deg, rgba(142, 204, 105, 0.15), rgba(123, 184, 94, 0.15));
+                padding: 20px;
+                margin: 20px 0;
                 border-radius: 15px;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                border-left: 4px solid #8ecc69;
+                box-shadow: 0 4px 15px rgba(142, 204, 105, 0.2);
             }
 
-            .site-title {
-                margin: 10px 0 0 0;
+            .mobile-only-content h3 {
+                color: #2c5530;
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+                font-weight: 600;
             }
 
-            .site-title h1 {
-                font-size: 1.8rem;
-                font-weight: 400;
-                color: white;
-                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-                letter-spacing: 0.5px;
-                margin-bottom: 8px;
+            .mobile-only-content p {
+                margin-bottom: 12px;
+                font-size: 0.95rem;
             }
 
-            .site-tagline {
-                font-size: 1rem;
-                color: rgba(44, 85, 48, 0.9);
-                font-weight: 300;
-            }
-
-            /* Enhanced Navigation for Mobile */
+            /* Enhanced Sidebar for Mobile */
             .nav {
                 background: rgba(44, 85, 48, 0.95);
                 backdrop-filter: blur(10px);
