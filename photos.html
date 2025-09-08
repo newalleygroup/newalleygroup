@@ -27,7 +27,121 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+  /* Enhanced Mobile-only Content */
+            .mobile-only-content {
+                display: block;
+                background: linear-gradient(135deg, rgba(142, 204, 105, 0.15), rgba(123, 184, 94, 0.15));
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 15px;
+                border-left: 4px solid #8ecc69;
+                box-shadow: 0 4px 15px rgba(142, 204, 105, 0.2);
+            }
 
+            .mobile-only-content h3 {
+                color: #2c5530;
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+
+            .mobile-only-content p {
+                margin-bottom: 12px;
+                font-size: 0.95rem;
+            }
+
+            /* Enhanced Sidebar for Mobile */
+            .sidebar {
+                gap: 15px;
+            }
+
+            .sidebar-box {
+                padding: 20px 18px;
+                margin-bottom: 15px;
+                background: rgba(255, 255, 255, 0.96);
+                border-radius: 18px;
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            .sidebar-box h3 {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                color: #2c5530;
+                font-weight: 500;
+            }
+
+            .sidebar-box p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            .sidebar-box ul {
+                padding-left: 18px;
+            }
+
+            .sidebar-box li {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+                line-height: 1.5;
+            }
+
+            /* Enhanced Email Link for Mobile */
+            .email-link {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+                border-radius: 20px;
+                display: inline-block;
+                margin-top: 5px;
+            }
+
+            /* Hide highlight boxes */
+            .highlight {
+                display: none;
+            }
+
+            /* Enhanced Footer for Mobile */
+            .footer {
+                margin-top: 30px;
+                padding: 25px 0;
+                background: linear-gradient(135deg, #2c5530, #1a3a1e);
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="images/logo.jpg" alt="New Alley Group Logo" class="logo">
+                <div class="site-title">
+                    <h1>New Alley Group</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="whatsapp.html">WhatsApp</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </div>
+    </nav>
         /* Header Section */
         .header {
             background: linear-gradient(135deg, #8ecc69 0%, #7bb85e 100%);
