@@ -84,7 +84,41 @@
             list-style: none;
             display: flex;
             justify-content: center;
+        } /* Mobile-only content - hidden by default */
+        .mobile-only-content {
+            display: none;
         }
+
+        /* Footer */
+        .footer {
+            background-color: #2c5530;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(180deg, #8ecc69 0%, #7bb85e 100%);
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Enhanced Header for Mobile */
+            .header {
+                padding: 20px 0 25px 0;
+                background: linear-gradient(180deg, #8ecc69 0%, #7bb85e 50%, #6fa84e 100%);
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
 
         .nav li {
             margin: 0;
