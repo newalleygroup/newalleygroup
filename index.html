@@ -491,6 +491,23 @@
                 font-size: 0.9rem;
                 color: rgba(255, 255, 255, 0.9);
             }
+
+            /* Partner Logos - Mobile Horizontal Layout */
+            .partner-logos-section {
+                padding: 15px 0;
+            }
+
+            .partner-logos-container {
+                gap: 8px !important;
+                flex-wrap: nowrap !important;
+                justify-content: space-around !important;
+            }
+
+            .partner-logos-container img {
+                width: 90px !important;
+                height: 65px !important;
+                flex-shrink: 0;
+            }
         }
         /* Desktop-only: Make activity image taller */
         @media (min-width: 769px) {
@@ -529,8 +546,8 @@
     </nav>
 
     <!-- Partner Logo Section -->
-    <div class="container" style="text-align: center; padding: 20px 0;">
-        <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+    <div class="container partner-logos-section" style="text-align: center; padding: 20px 0;">
+        <div class="partner-logos-container" style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: nowrap;">
             <img src="images/HS.jpeg" alt="HS Partner" style="width: 250px; height: 180px; object-fit: contain; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
             <img src="images/police.jpeg" alt="Police Partner" style="width: 250px; height: 180px; object-fit: contain; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
             <img src="images/RWM.jpeg" alt="RWM Partner" style="width: 250px; height: 180px; object-fit: contain; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
