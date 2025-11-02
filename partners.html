@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>New Alley Group</title>
+    <title>New Alley Group - Partners</title>
     <style>
         * {
             margin: 0;
@@ -47,7 +47,7 @@
         }
 
         .logo {
-            height: 220px;
+            height: 150px;
             width: auto;
             border-radius: 10px;
         }
@@ -174,8 +174,6 @@
             padding-bottom: 15px;
         }
 
-
-
         .content-section h3 {
             color: #1a3a1e;
             margin: 30px 0 20px 0;
@@ -192,44 +190,41 @@
             color: #34495e;
         }
 
-        .highlight {
-            background: white;
-            padding: 35px 45px;
-            margin: 30px 0;
-            border-radius: 20px;
-            display: block;
-            box-shadow: 
-                0 10px 30px rgba(44, 85, 48, 0.3),
-                0 1px 0 rgba(255, 255, 255, 0.4) inset;
-            color: #2c3e50;
-            text-shadow: none;
-            border: 1px solid rgba(44, 85, 48, 0.2);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
+        /* Partner/Logo Grid */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
 
-        .highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .partner-item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .partner-item img {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(142, 204, 105, 0.2), transparent);
-            transition: left 0.5s ease;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: contain;
         }
 
-        .highlight:hover {
-            transform: translateY(-3px);
-            box-shadow: 
-                0 15px 40px rgba(44, 85, 48, 0.4),
-                0 1px 0 rgba(255, 255, 255, 0.5) inset;
-        }
-
-        .highlight:hover::before {
-            left: 100%;
+        .partner-item h4 {
+            color: #2c5530;
+            margin-top: 15px;
+            font-size: 1.2rem;
         }
 
         .email-link {
@@ -260,22 +255,6 @@
             color: #2c5530;
         }
 
-        /* WhatsApp Rules Styling */
-        .whatsapp-rules ul {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        .whatsapp-rules li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        /* Mobile-only content - hidden by default */
-        .mobile-only-content {
-            display: none;
-        }
-
         /* Footer */
         .footer {
             background-color: #2c5530;
@@ -296,7 +275,6 @@
                 padding: 0 15px;
             }
 
-            /* Enhanced Header for Mobile */
             .header {
                 padding: 20px 0 25px 0;
                 background: linear-gradient(180deg, #8ecc69 0%, #7bb85e 50%, #6fa84e 100%);
@@ -333,7 +311,6 @@
                 font-weight: 300;
             }
 
-            /* Enhanced Navigation for Mobile */
             .nav {
                 background: rgba(44, 85, 48, 0.95);
                 backdrop-filter: blur(10px);
@@ -367,7 +344,6 @@
                 transform: translateY(-1px);
             }
 
-            /* Enhanced Main Content */
             .main-content {
                 flex-direction: column;
                 gap: 20px;
@@ -391,45 +367,15 @@
                 font-weight: 400;
             }
 
-            .content-section h3 {
-                font-size: 1.3rem;
-                margin: 25px 0 15px 0;
-                color: #1a3a1e;
-                font-weight: 500;
+            .partner-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            .content-section p {
-                font-size: 1rem;
-                line-height: 1.7;
-                margin-bottom: 16px;
-                color: #2c3e50;
-                text-align: left;
-            }
-
-            /* Enhanced Mobile-only Content */
-            .mobile-only-content {
-                display: block;
-                background: linear-gradient(135deg, rgba(142, 204, 105, 0.15), rgba(123, 184, 94, 0.15));
+            .partner-item {
                 padding: 20px;
-                margin: 20px 0;
-                border-radius: 15px;
-                border-left: 4px solid #8ecc69;
-                box-shadow: 0 4px 15px rgba(142, 204, 105, 0.2);
             }
 
-            .mobile-only-content h3 {
-                color: #2c5530;
-                font-size: 1.25rem;
-                margin-bottom: 12px;
-                font-weight: 600;
-            }
-
-            .mobile-only-content p {
-                margin-bottom: 12px;
-                font-size: 0.95rem;
-            }
-
-            /* Enhanced Sidebar for Mobile */
             .sidebar {
                 gap: 15px;
             }
@@ -449,37 +395,6 @@
                 font-weight: 500;
             }
 
-            .sidebar-box p {
-                font-size: 0.9rem;
-                line-height: 1.6;
-                margin-bottom: 10px;
-            }
-
-            .sidebar-box ul {
-                padding-left: 18px;
-            }
-
-            .sidebar-box li {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-                line-height: 1.5;
-            }
-
-            /* Enhanced Email Link for Mobile */
-            .email-link {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-                border-radius: 20px;
-                display: inline-block;
-                margin-top: 5px;
-            }
-
-            /* Hide highlight boxes */
-            .highlight {
-                display: none;
-            }
-
-            /* Enhanced Footer for Mobile */
             .footer {
                 margin-top: 30px;
                 padding: 25px 0;
@@ -517,8 +432,8 @@
                 <li><a href="whatsapp.html">WhatsApp</a></li>
                 <li><a href="info.html">Info</a></li>
                 <li><a href="photos.html">Photos</a></li>
-                <li><a href="news.html" class="active">News</a></li>
-                <li><a href="partners.html">Partners</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="partners.html" class="active">Partners</a></li>
             </ul>
         </div>
     </nav>
@@ -526,33 +441,38 @@
     <!-- Main Content -->
     <div class="container">
         <div class="main-content">
-            <!-- Content Section (70%) -->
+            <!-- Content Section -->
             <main class="content-section">
-                <h2>News Management</h2><br> <p>Meeting at HS to discuss the way forward <br>
-OUTCOME<br>
-1.HS Luke- Supplied Brooms Heavy duty gloves bin bag etc<br> 
-2.HS Nivene- supplied vouchers towards any refreshment <br>
-3.HS To arrange a work party to clean up the Car Parks and in the next 3 weeks and they would clean and tidy no24 Coln Close and help on a regular basis<br>
-4.Cllr Jack Douglas was also present<br> who agreed to help with printing leaflets etc and the community centre donated two much needed 5L flask for having Hot and Cold for our volunteers
- 
-</p>    
-               
-                <!-- News Management Box -->
-                <div class="highlight" style="margin-bottom: 30px;">
-                 
-                   
+                <h2>Our Partners & Supporters</h2>
+                
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem; color: #34495e;">
+                    We are grateful for the support of our community partners who help make our neighborhood a better place.
+                </p>
+
+                <div class="partner-grid">
+                    <div class="partner-item">
+                        <img src="images/HS.jpeg" alt="HS Partner" style="max-height: 200px;">
+                    </div>
+                    
+                    <div class="partner-item">
+                        <img src="images/police.jpeg" alt="Police Partner" style="max-height: 200px;">
+                    </div>
+                    
+                    <div class="partner-item">
+                        <img src="images/RWM.jpeg" alt="RWM Partner" style="max-height: 200px;">
+                    </div>
                 </div>
+
             </main>
 
-            <!-- Sidebar (30%) -->
+            <!-- Sidebar -->
             <aside class="sidebar">
                 <!-- Gathering Details Box -->
                 <div class="sidebar-box">
                     <h3>Gathering Details</h3>
-                    <p>   <p></p><strong>Our Next Meetinsgs:</strong> <br>The hard work has been done! We will meet once a month through the winter months to keep things ticking over <br><strong>Sunday Sept 28th 10.30am</strong><br>
+                    <p><strong>Our Next Meetings:</strong> <br>The hard work has been done! We will meet once a month through the winter months to keep things ticking over <br><strong>Sunday September 29th, 11am</strong></p>
                     
-                    <p><strong>Location:</strong><br>
-                        Back garden of 15 Windrush Way</p>
+                    <p><strong>Location:</strong> <br>Back garden of 15 Windrush Way</p>
 
                     <p style="margin-top: 15px; font-style: italic; color: #666;">Looking forward to meet you all!</p>
                 </div>
@@ -582,12 +502,7 @@ OUTCOME<br>
             <p>&copy; 2025 New Alley Group</p>
         </div>
     </footer>
-
-    <script>
-        // Page initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            // Page is ready
-        });
-    </script>
 </body>
-</html> 
+
+</html>
+
